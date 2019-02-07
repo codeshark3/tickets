@@ -15,6 +15,17 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
+             $table->string('title');
+            $table->mediumText('description');
+            $table->decimal('amount', 5, 2);
+            $table->string('slug')->unique();
+            $table->string('location');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('restrict');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
+            $table->string('cover_image')->nullable();
+            $table->string('contact');
             $table->timestamps();
         });
     }

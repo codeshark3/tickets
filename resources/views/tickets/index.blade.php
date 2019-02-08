@@ -34,6 +34,9 @@
             </td> --}}
         </tr>
         @endforeach
+         <div class="mx-auto">
+        	{{$tickets->links()}}
+        </div>
     </tbody>
   </table>
 <div>

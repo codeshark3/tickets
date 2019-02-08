@@ -16,3 +16,4 @@
 // });
 
 Route::get('/','TicketsController@index');
+Route::resource('tickets','TicketsController' );

@@ -31,10 +31,10 @@ class TicketsTableSeeder extends Seeder
         		'description' => $faker->paragraph(rand(5,7).true),
         		'slug' => $faker->slug(),
         		'cover_image'=>$faker->randomDigit(0,1) == 1 ? $image : NULL,
-        		'location' => $faker->sentence(rand(8,12)),
+        		
         		'category_id' =>  $faker->numberBetween(1,100),
-    			'contact' => $faker->e164PhoneNumber(),
-    			'amount' => $faker->randomNumber(3),
+    			'specialist_id' => $faker->numberBetween(1,3),
+    			'status' => "Open",
         		'created_at' => $date,
         		'updated_at' => $date
 

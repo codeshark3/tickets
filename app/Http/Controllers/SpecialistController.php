@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tickets;
 
-class TicketsController extends Controller
+class SpecialistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,6 @@ class TicketsController extends Controller
     public function index()
     {
         //
-          $tickets = Tickets::orderBy('title','asc')->paginate(10); 
-        return view('tickets.index', compact('categories'))->with('tickets', $tickets);
-    
     }
 
     /**

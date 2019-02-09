@@ -41,12 +41,12 @@
      <!--  {{--   <main class="py-4" > --}} -->
       <div class="container" style="margin-top: 70px">
         <div class="row">
-         <!--  <div class="col-md-2 col-lg-2 ml-auto" style="margin-left: -20px">
-           {{--  @include('includes.leftsidebar') --}}
-          </div> -->
-          <div class="col-md-8 col-lg-8 mx-auto">
+          <div class="col-md-2 col-lg-2 mx-auto"  style=" background-color:#f1f1f1 ">
+         kdmsdlmbdmdslbmdlbdsm;lm
+          </div>
+          <div class="col-md-10 col-lg-10 mx-auto">
             @include('includes.messages')
-            <div class="card">
+            <div class="card" >
               <div class="card-header card-header-text card-header-primary">Jobs</div>
               <div class="card-body">
                 @yield('content')

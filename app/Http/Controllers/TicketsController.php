@@ -22,7 +22,7 @@ class TicketsController extends Controller
     public function index()
     {
         //
-          $tickets = Tickets::orderBy('title','asc')->paginate(5); 
+          $tickets = Tickets::orderBy('id','desc')->paginate(10); 
         return view('tickets.index', compact('categories'))->with('tickets', $tickets);
     
     }

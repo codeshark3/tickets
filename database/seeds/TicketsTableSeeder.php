@@ -27,8 +27,8 @@ class TicketsTableSeeder extends Seeder
 
         	$tickets[] = [
         		'user_id' => $faker->numberBetween(1,3),
-        		'title' => $faker->sentence(rand(8,12)),
-        		'description' => $faker->paragraph(rand(5,7).true),
+        		'title' => $faker->sentence(rand(1,2)),
+        		'description' => $faker->paragraph(rand(1,2).true),
         		'slug' => $faker->slug(),
         		'cover_image'=>$faker->randomDigit(0,1) == 1 ? $image : NULL,
         		

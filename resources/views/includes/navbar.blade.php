@@ -1,6 +1,6 @@
 
 
-   <nav class="navbar navbar-expand-md navbar-dark bg-primary navbar-laravel navbar-color-on-scroll fixed-top {{-- navbar-transparent --}}" color-on-scroll="100">
+   <nav class="navbar navbar-expand-md navbar-dark bg-success navbar-laravel navbar-color-on-scroll fixed-top {{-- navbar-transparent --}}" color-on-scroll="100">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'FLASH') }}
@@ -42,18 +42,18 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{-- {{ route('login') }} --}}">{{ __('Login') }}</a>
+                           {{--  <li class="nav-item">
+                                <a class="nav-link" href=" {{ route('login') }} ">{{ __('Login') }}</a>
                             </li>
 
-                     {{--    <button class="btn btn-round btn-primary" data-toggle="modal" data-target="#loginModal">
+                        <button class="btn btn-round btn-primary" data-toggle="modal" data-target="#loginModal">
                             Login<i class="material-icons">assignment</i>
 
                         </button>
- --}}
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{-- {{ route('register') }} --}}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{ {{ route('register') }} ">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -63,7 +63,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{-- {{ route('logout') }} --}}"
+                                    <a class="dropdown-item" href="{{ route('logout') }} "
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -74,7 +74,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                         --}}@endguest
                     </ul>
                 </div>
             </div>

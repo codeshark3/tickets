@@ -14,6 +14,7 @@
     <script src="{{ asset('js/core/jquery.min.js') }}" ></script>
     <script src="{{ asset('js/core/popper.min.js') }}" ></script>
     <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}" ></script>
+    <script src="{{ asset('js/frontend_js/buttons.js') }}" ></script>
     <script src="{{ asset('js/plugins/moment.min.js') }}" ></script>
     <script src="{{ asset('js/plugins/bootstrap-datetimepicker.js') }}" ></script>
     <script src="{{ asset('js/plugins/nouislider.min.js') }}" ></script>
@@ -47,7 +48,16 @@
           <div class="col-md-10 col-lg-10 mx-auto">
             @include('includes.messages')
             <div class="card" >
-              <div class="card-header card-header-text card-header-primary">Jobs</div>
+              <div class="card-header card-header-text card-header-primary">
+                 <form class="form-inline ml-auto">
+                <div class="form-group no-border">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-white btn-just-icon btn-round">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+              </div>
               <div class="card-body">
                 @yield('content')
               </div>
@@ -61,5 +71,14 @@
       <!--   {{-- @yield('content') --}}
         {{-- </main>
  --}}    -->
+
+ <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor2' );
+    </script>
 </body>
 </html>

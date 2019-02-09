@@ -167,6 +167,7 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
+        willvincent\Rateable\RateableServiceProvider::class,
         /*
          * Application Service Providers...
          */

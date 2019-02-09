@@ -17,3 +17,6 @@
 
 Route::get('/','TicketsController@index');
 Route::resource('tickets','TicketsController' );
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

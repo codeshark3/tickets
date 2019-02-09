@@ -53,10 +53,10 @@ class TicketsController extends Controller
         $this->validate($request,[
             'title'=>'required',
             'description'=>'required',
-            'amount'=>'nullable',
-            'location'=>'nullable',
-            'category'=>'nullable',
-            'contact'=>'nullable',
+            // 'amount'=>'nullable',
+            // 'location'=>'nullable',
+            // 'category'=>'nullable',
+            // 'contact'=>'nullable',
             'slug'=>'nullable',
             'cover_image' => 'image|nullable|max:1999'
 
@@ -193,5 +193,23 @@ class TicketsController extends Controller
         $post->delete();
          return redirect('/')->with('success', 'ticket Canceled');
 
+    }
+
+
+    public function close(Request $request, $id){
+          $this->validate($request,[
+            'status'=>'required',
+            'evaluation'=>'required'
+        ]);
+
+          $ticket = Tickets::find($id);
+        $ticket->title = $request->input('title');
+        $ticket->description = $request->input('description');
+         if($request->hasFile('cover_image')){
+            $ticket->cover_image = $fileNameToStore;
+         }
+        $ticket->save();
+
+        return redirect('/')->with('success', 'ticket updated');
     }
 }

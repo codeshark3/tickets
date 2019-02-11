@@ -23,7 +23,7 @@ class TicketsController extends Controller
     {
         //
           $tickets = Tickets::orderBy('id','desc')->paginate(10); 
-        return view('tickets.index', compact('categories'))->with('tickets', $tickets);
+        return view('tickets.index')->with('tickets', $tickets);
     
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Tickets;
 use App\Category;
 use DB;
@@ -53,11 +54,11 @@ class TicketsController extends Controller
         $this->validate($request,[
             'title'=>'required',
             'description'=>'required',
-            // 'amount'=>'nullable',
-            // 'location'=>'nullable',
-            // 'category'=>'nullable',
-            // 'contact'=>'nullable',
-            'slug'=>'nullable',
+            'amount'=>'nullable',
+            'location'=>'nullable',
+            'category_id'=>'nullable',
+            'contact'=>'nullable',
+            // 'slug'=>'nullable',
             'cover_image' => 'image|nullable|max:1999'
 
         ]);
@@ -85,12 +86,14 @@ class TicketsController extends Controller
         $ticket->title = $request->input('title');
         $ticket->description = $request->input('description');
         $ticket->user_id = auth()->user()->id;
-        $ticket->cover_image = $fileNameToStore;
-        $ticket->amount = $request->input('amount');
-        $ticket->location = $request->input('location');
-        $ticket->category = $request->input('category');
+        // $ticket->cover_image = $fileNameToStore;
+      
+        // // $ticket->location = $request->input('location');
+         $ticket->category_id = $request->input('category_id');
+          $ticket->specialist_id = $request->input('specialist_id');
          $ticket->slug = $request->input('slug');
-        $ticket->contact = $request->input('contact');
+         $ticket->status = $request->input('status');
+        
         $ticket->save();
 
         return redirect('/')->with('success', 'ticket created');
@@ -123,9 +126,9 @@ class TicketsController extends Controller
         $ticket = Tickets::find($id);
 
         //check for correct user
-        if(auth()->user()->id !== $ticket->user_id){
-            return redirect('/tickets')->with('error', 'Unauthorized');
-        }
+        // if(auth()->user()->id !== $ticket->user_id){
+            // return redirect('/tickets')->with('error', 'Unauthorized');
+        // }
         return view('tickets.edit', compact('categories'))->with('ticket', $ticket);
     }
 
@@ -190,7 +193,7 @@ class TicketsController extends Controller
             //delete image
             Storage::delete('public/cover_images'.$ticket->cover_image);
         }
-        $post->delete();
+        $ticket->delete();
          return redirect('/')->with('success', 'ticket Canceled');
 
     }

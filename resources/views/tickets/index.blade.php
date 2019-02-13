@@ -34,8 +34,19 @@
             <td>{{$ticket->status}}</td>
             <td>{{$ticket->user_id}}</td>
             <td>{{$ticket->specialist_id}}</td>
-            <td  class="" width="30%"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">Edit</button><button type="button" class="btn btn-danger ">Delete</button></td>
+          <!--  {{-- <td  class="" width="30%"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">Edit</button> --}}-->
+            <td>    {{--   @if(!Auth::guest()) --}}
+                 {{--  @if(Auth::user()->id == $tickets->user_id) --}}
+              <a href="/tickets/{{$ticket->id}}/edit" class="btn btn-default">Edit</a>
+              {!! Form::open(['action' => ['TicketsController@destroy', $ticket->id], 'method'=>'POST', 'class'=>'pull-right']) !!}
 
+          {{Form::hidden('_method','DELETE') }}
+          {!! Form::submit('Cancel', ['class'=>'btn btn-danger']) !!}
+        {!! Form::close() !!}
+
+              
+             {{--    @endif
+        @endif --}}
             
          {{--    <td><a href="{{ route('tickets.edit',$ticket->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
@@ -131,7 +142,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Task:<?php  echo $ticket->id ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Task:{{$ticket->id}}  </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

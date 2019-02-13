@@ -1,6 +1,6 @@
 
 
-   <nav class="navbar navbar-expand-md navbar-dark bg-success navbar-laravel navbar-color-on-scroll fixed-top {{-- navbar-transparent --}}" color-on-scroll="100">
+   <nav class="navbar navbar-expand-md navbar-dark bg-info navbar-laravel navbar-color-on-scroll fixed-top {{-- navbar-transparent --}}" color-on-scroll="100">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'FLASH') }}

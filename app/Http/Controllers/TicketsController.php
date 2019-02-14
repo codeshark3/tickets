@@ -201,7 +201,7 @@ class TicketsController extends Controller
 
     public function close(Request $request, $id){
           $this->validate($request,[
-            'status'=>'required',
+            // 'status'=>'required',
             'evaluation'=>'required'
         ]);
 

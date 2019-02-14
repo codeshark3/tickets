@@ -38,17 +38,17 @@
             <td>    {{--   @if(!Auth::guest()) --}}
                  {{--  @if(Auth::user()->id == $tickets->user_id) --}}
               <a href="/tickets/{{$ticket->id}}/edit" class="btn btn-default">Edit</a>
+              <a href="/tickets/{{$ticket->id}}/close" class="btn btn-default">Close</a>
               {!! Form::open(['action' => ['TicketsController@destroy', $ticket->id], 'method'=>'POST', 'class'=>'pull-right']) !!}
-
-          {{Form::hidden('_method','DELETE') }}
-          {!! Form::submit('Cancel', ['class'=>'btn btn-danger']) !!}
-        {!! Form::close() !!}
-
+                {{Form::hidden('_method','DELETE') }}
+                {!! Form::submit('Cancel', ['class'=>'btn btn-danger']) !!}
+              {!! Form::close() !!}
+            </td>
               
-             {{--    @endif
+             {{-- @endif
         @endif --}}
             
-         {{--    <td><a href="{{ route('tickets.edit',$ticket->id)}}" class="btn btn-primary">Edit</a></td>
+         {{--    <a href="{{ route('tickets.edit',$ticket->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form action="{{ route('tickets.destroy', $ticket->id)}}" method="post">
                   @csrf

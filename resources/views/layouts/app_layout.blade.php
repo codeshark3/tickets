@@ -8,11 +8,16 @@
   <meta name="author" content="Dashboard">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  {{-- <title>Dashio - Bootstrap Admin Template</title> --}}
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <!-- {{-- <title>Dashio - Bootstrap Admin Template</title> --}}
+ -->  <title>{{ config('app.name', 'Laravel') }}</title>
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- laravel styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/material-kit.min.css') }}" rel="stylesheet">
+   
 
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">

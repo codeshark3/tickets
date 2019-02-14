@@ -13,8 +13,8 @@
 </style>
 <div>
  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#createModal">Create</button>
- 
- 
+
+
   <table class="table table-bordered table-striped table-md table-hover reponsive" cellspacing="0" width="100%" style="font-weight: bold">
     <thead>
         <tr>
@@ -44,10 +44,10 @@
                 {!! Form::submit('Cancel', ['class'=>'btn btn-danger']) !!}
               {!! Form::close() !!}
             </td>
-              
+
              {{-- @endif
         @endif --}}
-            
+
          {{--    <a href="{{ route('tickets.edit',$ticket->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form action="{{ route('tickets.destroy', $ticket->id)}}" method="post">
@@ -58,7 +58,7 @@
             </td> --}}
         </tr>
         @endforeach
-         
+
     </tbody>
 
   </table>
@@ -78,7 +78,7 @@
         </button>
       </div>
       <div class="modal-body">
-        
+
           {!! Form::open(['action' => 'TicketsController@store', 'method' =>'POST','enctype'=> 'multipart/form-data']) !!}
 	    {{--    multipart/yaz_database(id, databases) --}}
 	        	<div class="form-group">
@@ -86,8 +86,8 @@
 	        		{!! Form::text('title', '', ['class'=>'form-control', 'placeholder'=>'Enter Title']) !!}
 
 	        	</div>
-	        	
-	    
+
+
 	        	<div class="form-group">
 	        		{!! Form::label('Category','Category') !!}
 	        		{!! Form::text('category', '', ['class'=>'form-control', 'placeholder'=>'Enter Category']) !!}
@@ -122,7 +122,7 @@
 	        	<div>
 	        		{{Form::file('cover_image')}}
 
-	        		
+
 	        	</div>
 	              </div>
       <div class="modal-footer">
@@ -148,7 +148,7 @@
         </button>
       </div>
       <div class="modal-body">
-        
+
   {!! Form::open(['action' => ['TicketsController@update',$ticket->id], 'method'=>'POST','enctype'=> 'multipart/form-data']) !!}
 	        	<div class="form-group">
 	        		{!! Form::label('title','Title') !!}
@@ -160,7 +160,7 @@
 					{{ Form::email('email', '', ['class'=>'form-control','placeholder'=>'example@gmail.com'])}}
 	        	</div> --}}
 	        		{{Form::file('cover_image')}}
-	        	
+
 	        	<div class="form-group">
 	        		{!! Form::label('description', 'Description', []) !!}
 					{{ Form::textarea('description', $ticket->description, ['id'=>'article-ckeditor2','class'=>'form-control','placeholder'=>'Enter Description'])}}
@@ -168,14 +168,14 @@
 
 	        	<div>
 	        		{{Form::hidden('_method','PUT')}}
-	        		
-	        	
+
+
 	        	</div>
-	        	
-	             
+
+
       <div class="modal-footer">
 		{!! Form::submit('Submit', ['class'=>'btn btn-primary form-control']) !!}
-      	
+
         {!! Form::close() !!}
 
 
